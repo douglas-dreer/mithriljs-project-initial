@@ -1,8 +1,9 @@
 import m from 'mithril';
 
 //Bootstrap
-import 'bootstrap';
+import 'bootstrap/dist/js/bootstrap.bundle';
 import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 //Admin-LTE
 import 'admin-lte';
@@ -16,7 +17,6 @@ import HomeView from "../views/home.view";
 import SobreProjetoView from '../views/sobre.view';
 import ServiceView from '../views/service.view';
 
-var $ = require('jquery');
 const body = document.body;
 
 m.route(body, "/", {
