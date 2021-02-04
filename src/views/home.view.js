@@ -1,5 +1,6 @@
 import m from 'mithril';
 import HomeController from "../controllers/home.controller";
+import MainHeadView from "../components/main-head.view";
 
 
 export default class CardapioView {
@@ -10,6 +11,10 @@ export default class CardapioView {
         this.controller = new HomeController();
     }
     view(){
+        return m(".wrapper", [
+           m(MainHeadView)
+        ]);
+        /*
         return m(".col-12", [
             m(".row", [
                 m("h1", "Bem-Vindo ao MithrilJS Project Initial"),
@@ -29,5 +34,6 @@ export default class CardapioView {
                 ])
             ])
         ])
+        */
     }
 }

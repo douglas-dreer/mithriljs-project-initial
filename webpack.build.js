@@ -6,12 +6,18 @@ const webpack = require('webpack');
 const babel = true;
 const createMap = false;
 
-let plugins = [];
+let plugins = [
+  new webpack.ProvidePlugin({
+    $: "jquery",
+    jQuery: "jquery",
+    "window.jQuery": "jquery"
+  }),
+  new webpack.DefinePlugin(envs)
+];
 let envs = {};
 Object.keys(process.env).filter(key => key.startsWith('MITHRIL_')).forEach(key => {
   envs[key] = JSON.stringify(process.env[key]);
 });
-plugins.push(new webpack.DefinePlugin(envs));
 
 let app = ['./src/configs/project.config.js'];
 let rules = [];
@@ -47,8 +53,13 @@ module.exports = {
   },
   mode: 'production',
   devtool: devtools,
+  resolve: { alias: {'jquery':  path.join(__dirname, '/node_modules/jquery/dist/jquery.min.js') } },
   plugins: plugins,
   module: {
+    loaders: [
+      { test: /[\/\\]node_modules[\/\\]some-module[\/\\]index\.js$/, loader: "imports?this=>window" },
+      { test: /[\/\\]node_modules[\/\\]some-module[\/\\]index\.js$/, loader: "imports?define=>false" }
+    ],
     rules: rules,
   },
 };

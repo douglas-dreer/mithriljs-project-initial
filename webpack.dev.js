@@ -8,12 +8,20 @@ const openBrowser = true;
 const babel = true;
 
 // inject envs
-let plugins = [];
 let envs = {};
+
+let plugins = [
+  new webpack.ProvidePlugin({
+      $: "jquery",
+      jQuery: "jquery",
+      "window.jQuery": "jquery"
+    }),
+  new webpack.DefinePlugin(envs)
+];
+
 Object.keys(process.env).filter(key => key.startsWith('MITHRIL_')).forEach(key => {
   envs[key] = JSON.stringify(process.env[key]);
 });
-plugins.push(new webpack.DefinePlugin(envs));
 
 let app = ['./src/configs/project.config.js'];
 let rules = [];

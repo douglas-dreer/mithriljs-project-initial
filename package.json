@@ -8,7 +8,9 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.2",
     "@popperjs/core": "^2.6.0",
+    "admin-lte": "3.0",
     "bootstrap": "^5.0.0-beta1",
     "css-loader": "^5.0.1",
     "jquery": "^3.5.1",
