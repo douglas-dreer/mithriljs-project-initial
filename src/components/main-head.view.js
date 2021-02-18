@@ -4,7 +4,6 @@ export default class MainHeadView {
   constructor(vnode){}
 
   view() {
-
     return m("nav.main-header.navbar.navbar-expand.navbar-white.navbar-light", [
       //Left navbar links
       m("ul.navbar-nav", [
@@ -28,29 +27,7 @@ export default class MainHeadView {
             m("button[type='submit'].btn.btn-navbar", [m("i.fas.fa-search")])
           ])
         ])
-      ]),
-      m("ul.navbar-nav.ml-auto", [
-        m("li.nav-item.dropdown", [
-          m("a.nav-link", {"data-toggle": "dropdown", "href": "#"}, [
-            m("i.far.fa-comments"),
-            m("span.badge.badge-danger.navbar-badge", "3")
-          ]),         
-          m(".dropdown-menu.dropdown-menu-lg.dropdown-menu-right", [
-            m("a.dropdown-item", {"href":"#"}, [
-              m(".media", [
-                m("img.img-size-50.mr-3.img-circle", {"alt": "Image User", "src": "img/user1-128x128.jpg"}),
-                m(".media-body", [
-                  m("h3.dropdown-item-title", "Brad Diesel", [ 
-                    m("span.float-right.text-sm.text-danger", [ m("i.fas.fa-star") ])
-                  ]),
-                  m("p.text-sm"),
-                  m("p.text-sm.text-muted", [ m("i.far.fa-clock.mr-1"), "4 Horas atrás"])
-                ])
-              ])
-            ])
-          ])
-        ])
-      ])
+      ])  
     ])
   }    
 }
