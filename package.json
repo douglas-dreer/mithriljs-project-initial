@@ -10,7 +10,7 @@
   },
    "engines": {
     "npm": "15.8.0"
-  }
+  },
   "dependencies": {
     "@popperjs/core": "^2.6.0",
     "bootstrap": "^5.0.0-beta1",
